@@ -1,0 +1,26 @@
+{
+  "name": "etch-a-sketch",
+  "version": "1.0.0",
+  "description": "A simple JavaScript sketching app created as part of [The Odin Project's Foundations Course](https://www.theodinproject.com/paths/foundations/courses/foundations/lessons/etch-a-sketch-project).",
+  "private": true,
+  "scripts": {
+    "start": "parcel src/index.html --open",
+    "clean": "rm --verbose -rf ./dist",
+    "build": "npm run clean && parcel build src/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/asadmoosvi/etch-a-sketch.git"
+  },
+  "keywords": [],
+  "author": "Asad Moosvi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/asadmoosvi/etch-a-sketch/issues"
+  },
+  "homepage": "https://github.com/asadmoosvi/etch-a-sketch#readme",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5",
+    "sass": "^1.37.5"
+  }
+}
