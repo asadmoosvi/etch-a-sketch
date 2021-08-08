@@ -4,6 +4,7 @@ $ff: 'Oxygen', sans-serif;
 $clr-primary: #f5f5f5;
 $clr-secondary: #2c394b;
 $clr-accent: #ff4c29;
+$transition: 200ms;
 
 body {
   font-family: $ff;
@@ -15,6 +16,9 @@ body {
   padding: 1rem;
   max-width: 1024px;
   margin: auto;
+  &__sketch {
+    margin-top: 1rem;
+  }
 }
 h1,
 h2,
@@ -37,4 +41,81 @@ h3::after {
   bottom: -0.5rem;
   border-radius: 1em;
   background-color: $clr-accent;
+}
+.btn {
+  all: unset;
+  display: inline-block;
+  background-color: $clr-accent;
+  color: #fff;
+  padding: 0.5em 0.75em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all $transition;
+
+  &:hover,
+  &:focus-visible {
+    background-color: darken($clr-accent, 25%);
+  }
+  &:active {
+    background-color: darken($clr-accent, 35%);
+  }
+  &_rainbow_active {
+    animation: 10s ease-in-out infinite animation;
+  }
+}
+@keyframes animation {
+  10% {
+    background: darken(red, 25%);
+  }
+  20% {
+    background: darken(orange, 25%);
+  }
+  30% {
+    background: darken(yellow, 25%);
+  }
+  40% {
+    background: darken(green, 25%);
+  }
+  50% {
+    background: darken(cyan, 25%);
+  }
+  60% {
+    background: darken(blue, 25%);
+  }
+  70% {
+    background: darken(violet, 25%);
+  }
+}
+
+.sketch {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  &__grid {
+    height: 25rem;
+    background-color: #fff;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    display: grid;
+  }
+  &__buttons {
+    display: flex;
+    gap: 1rem;
+  }
+}
+
+#color {
+  height: unset;
+  cursor: pointer;
+}
+
+#range {
+  cursor: pointer;
+  font: unset;
+  line-height: 100%;
+}
+#range-output {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }

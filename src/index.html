@@ -8,11 +8,37 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./style.scss" />
+    <script src="index.js" defer></script>
     <title>Etch a Sketch</title>
   </head>
   <body>
     <div class="container">
       <h1 class="main-heading">Etch a sketch</h1>
+      <div class="sketch container__sketch">
+        <div class="sketch__grid"></div>
+        <div class="sketch__buttons">
+          <button class="sketch__clear-btn btn">Clear grid</button>
+          <button class="sketch__rainbow-btn btn btn_rainbow btn_rainbow">
+            toggle rainbow mode
+          </button>
+          <input
+            title="Select a color"
+            class="sketch__color"
+            type="color"
+            name="color"
+            id="color"
+          />
+          <input
+            type="range"
+            name="range"
+            id="range"
+            min="1"
+            max="100"
+            value="16"
+            oninput="this.nextElementSibling.value = `${this.value}x${this.value}`"
+          /><output id="range-output">16x16</output>
+        </div>
+      </div>
     </div>
   </body>
 </html>
