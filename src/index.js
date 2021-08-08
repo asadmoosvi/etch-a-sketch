@@ -36,8 +36,8 @@ function createGrid(size) {
       }
     });
   }
-  sketchGrid.style.gridTemplateColumns = `repeat(${size}, 1fr`;
-  sketchGrid.style.gridTemplateRows = `repeat(${size}, 1fr`;
+  sketchGrid.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
+  sketchGrid.style.gridTemplateRows = `repeat(${size}, 1fr)`;
 }
 
 //initial grid size
