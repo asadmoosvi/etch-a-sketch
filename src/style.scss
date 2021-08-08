@@ -97,6 +97,7 @@ h3::after {
     background-color: #fff;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
     display: grid;
+    touch-action: none;
   }
   &__buttons {
     display: flex;

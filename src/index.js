@@ -11,6 +11,13 @@ function getRandomColor() {
   return `rgb(${getRandomNumber()}, ${getRandomNumber()}, ${getRandomNumber()})`;
 }
 
+function colorBox(box) {
+  let newColor = color.value;
+  if (rainbowBtn.classList.contains('btn_rainbow_active')) {
+    newColor = getRandomColor();
+  }
+  box.style.backgroundColor = newColor;
+}
 function createGrid(size) {
   sketchGrid.innerHTML = '';
   for (let i = 0; i < size * size; i++) {
@@ -18,11 +25,15 @@ function createGrid(size) {
     newBox.classList.add('.sketch__box');
     sketchGrid.appendChild(newBox);
     newBox.addEventListener('mouseover', () => {
-      let newColor = color.value;
-      if (rainbowBtn.classList.contains('btn_rainbow_active')) {
-        newColor = getRandomColor();
+      colorBox(newBox);
+    });
+    newBox.addEventListener('touchmove', (e) => {
+      let touchX = e.touches[0].clientX;
+      let touchY = e.touches[0].clientY;
+      let boxTouched = document.elementFromPoint(touchX, touchY);
+      if (boxTouched && boxTouched.classList.contains('.sketch__box')) {
+        colorBox(boxTouched);
       }
-      newBox.style.backgroundColor = newColor;
     });
   }
   sketchGrid.style.gridTemplateColumns = `repeat(${size}, 1fr`;
