@@ -22,7 +22,7 @@ function createGrid(size) {
   sketchGrid.innerHTML = '';
   for (let i = 0; i < size * size; i++) {
     let newBox = document.createElement('div');
-    newBox.classList.add('.sketch__box');
+    newBox.classList.add('sketch__box');
     sketchGrid.appendChild(newBox);
     newBox.addEventListener('mouseover', () => {
       colorBox(newBox);
@@ -31,7 +31,7 @@ function createGrid(size) {
       let touchX = e.touches[0].clientX;
       let touchY = e.touches[0].clientY;
       let boxTouched = document.elementFromPoint(touchX, touchY);
-      if (boxTouched && boxTouched.classList.contains('.sketch__box')) {
+      if (boxTouched && boxTouched.classList.contains('sketch__box')) {
         colorBox(boxTouched);
       }
     });
