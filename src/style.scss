@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap');
+
+$ff: 'Oxygen', sans-serif;
+$clr-primary: #f5f5f5;
+$clr-secondary: #2c394b;
+$clr-accent: #ff4c29;
+
+body {
+  font-family: $ff;
+  background-color: $clr-primary;
+  margin: 0;
+}
+
+.container {
+  padding: 1rem;
+  max-width: 1024px;
+  margin: auto;
+}
+h1,
+h2,
+h3 {
+  font-weight: 300;
+  color: $clr-secondary;
+  margin-top: 0;
+  display: inline-block;
+  position: relative;
+}
+
+h1::after,
+h2::after,
+h3::after {
+  position: absolute;
+  content: '';
+  width: 75%;
+  height: 5%;
+  left: 0;
+  bottom: -0.5rem;
+  border-radius: 1em;
+  background-color: $clr-accent;
+}
