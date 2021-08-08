@@ -9,3 +9,7 @@ A simple JavaScript sketching app created as part of
 2. Run `npm install` to install dependencies.
 3. Run `npm start` to start the live server.
    You can then view the website at [localhost:1234](http://localhost:1234).
+
+## screenshot
+
+![app screenshot](./screenshot.png)
