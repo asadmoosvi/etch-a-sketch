@@ -44,11 +44,14 @@ function createGrid(size) {
 createGrid(16);
 
 clearGrid.addEventListener('click', () => {
-  createGrid(gridSizeRange.value);
+  let boxes = document.querySelectorAll('.sketch__box');
+  boxes.forEach((box) => {
+    box.style.backgroundColor = 'white';
+  });
 });
 
 gridSizeRange.addEventListener('change', () => {
-  clearGrid.click();
+  createGrid(gridSizeRange.value);
 });
 
 // rainbow
